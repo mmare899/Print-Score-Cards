@@ -1,0 +1,20 @@
+using System;
+
+public class Hole
+{
+	public Hole()
+	{
+	}
+  
+  public Hole(int holeNumber, int holeLength, string teeColor)
+	{
+      HoleNumber = holeNumber;
+      HoleLength = holeLength;
+      TeeColor = teeColor;
+	}
+  
+  public int HoleNumber = 0;
+  public int HoleLength = 0;
+  public string TeeColor = '';
+  
+}
