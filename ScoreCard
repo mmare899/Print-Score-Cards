@@ -6,6 +6,8 @@ public class ScoreCard
 	{
 	}
   
-  public int numberOfHoles = 18;
+  	public int numberOfHoles = 18;
+  
+  	public List<Hole> holes = new List<Hole>();
   
 }
