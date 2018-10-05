@@ -9,5 +9,11 @@ public class ScoreCard
   	public int numberOfHoles = 18;
   
   	public List<Hole> holes = new List<Hole>();
+	
+	private void CreateHoles()
+	{
+		Hole newHole = new Hole();
+		holes.Add(newHole);
+	}
   
 }
