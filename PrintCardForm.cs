@@ -4,6 +4,7 @@ public partial class PrintCardForm : Form
 {
     private Button printButton = new Button();
     private Button printPreviewButton;
+    private Button getFileButton;
     private PrintDocument printDocument1 = new PrintDocument();
     private PrintPreviewDialog printPreviewDialog1 = new PrintPreviewDialog();
     // Declare a string to hold the entire document contents.
@@ -27,6 +28,13 @@ public partial class PrintCardForm : Form
         this.ClientSize = new Size(292, 266);
         this.Controls.Add(this.printPreviewButton);
         printDocument1.PrintPage += new PrintPageEventHandler(printDocument1_PrintPage);
+        
+        this.getFileButton = new Button();
+        this.getFileButton.Location = new Point(200, 20);
+        this.getFileButton.Size = new Size(125, 23);
+        this.getFileButton.Text = "Get File";
+        this.getFileButton.Click += new EventHandler(this.getFile_Click);
+        this.Controls.Add(this.getFileButton);
     }
 
     private void printPreviewButton_Click(object sender, EventArgs e)
@@ -47,10 +55,8 @@ public partial class PrintCardForm : Form
         printPreviewDialog1.ShowDialog();
     }
 
-    private void ReadDocument()
+    private void ReadDocument(string docName, string docPath)
     {
-        string docName = "testPage.txt";
-        string docPath = @"c:\";
         printDocument1.DocumentName = docName;
         using (FileStream stream = new FileStream(docPath + docName, FileMode.Open))
         {
@@ -100,5 +106,13 @@ public partial class PrintCardForm : Form
         //{
         //    stringToPrint = documentContents;
         //}
+    }
+    
+    private void getFile_Click(object sender, EventArgs e)
+    {
+        string docName = "testPage.txt";
+        string docPath = @"c:\";
+
+        ReadDocument(docName, docPath);
     }
 }
