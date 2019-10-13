@@ -6,19 +6,23 @@ public class ScoreCard
 	{
 	}
   
-  	public int numberOfHoles = 18;
+  	public int NumberOfHoles = 18;
   
-  	public List<Hole> holes = new List<Hole>();
+  	public List<Hole> Holes = new List<Hole>();
 	
-	private void CreateHoles()
+	private void CreateHole(int holeNumber, int holeLength, string teeColor)
 	{
 		Hole newHole = new Hole();
+		newHole.HoleNumber = holeNumber;
+		newHole.HoleLength = holeLength;
+		newHole.TeeColor = teeColor;
+		
 		holes.Add(newHole);
 	}
 	
 	public void ReadInCSVFile()
 	{
-	string InputFile = "";
+	    string InputFile = "";
             string OutputFile = "";
             string Round = "";
             DataTable output = InstantiateTable();
