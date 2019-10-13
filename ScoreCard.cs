@@ -17,7 +17,7 @@ public class ScoreCard
 		newHole.HoleLength = holeLength;
 		newHole.TeeColor = teeColor;
 		
-		holes.Add(newHole);
+		Holes.Add(newHole);
 	}
 	
 	public void ReadInCSVFile()
