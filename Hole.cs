@@ -2,6 +2,11 @@ using System;
 
 public class Hole
 {
+
+	public int? HoleNumber = null;
+	public int? HoleLength = null;
+	public string TeeColor = "";
+	
 	public Hole()
 	{
 	}
