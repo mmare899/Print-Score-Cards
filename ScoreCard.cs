@@ -98,6 +98,7 @@ public class ScoreCard
                 case "MA1":return "Advanced";
                 case "MG1":return "Adv GM";
                 case "MM1": return "Adv Mast";
+		case "NOV": return "Novice";
                 default: return div;
             }
         }
